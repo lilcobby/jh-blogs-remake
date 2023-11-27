@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS jhBlog_db;
+CREATE DATABASE jhBlog_db;
