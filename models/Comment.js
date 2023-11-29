@@ -22,11 +22,11 @@ Comment.init(
         key: "id",
       },
     },
-    project_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: { model: "project", key: "id" },
-    },
+    // project_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: { model: "project", key: "id" },
+    // },
   },
   {
     sequelize,

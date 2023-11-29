@@ -20,7 +20,7 @@ const newFormHandler = async (event) => {
     }
   }
 };
-// comment button functionality
+
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {

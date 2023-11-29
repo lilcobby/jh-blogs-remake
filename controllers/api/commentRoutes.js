@@ -9,11 +9,13 @@ router.post("/", withAuth, async (req, res) => {
     // const projectIds = await Project.findAll({ attributes: ["id"] });
 
     const newComment = await Comment.create({
-      ...req.body,
+      // ...(req.body),
+      comment_text: req.body.cmntVal,
       user_id: req.session.user_id,
-      project_id: req.body.project_id,
+
+      // project_id: req.body.project_id,
     });
-    console.log(req.body.project_id);
+    console.log(newComment);
     res.status(200).json(newComment);
   } catch (err) {
     console.log(err);
