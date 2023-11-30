@@ -19,14 +19,14 @@ Comment.init(
       allowNull: false,
       references: {
         model: "user",
-        key: "id",
+        key: "name",
       },
     },
-    // project_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: { model: "project", key: "id" },
-    // },
+    project_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: { model: "project", key: "id" },
+    },
   },
   {
     sequelize,
