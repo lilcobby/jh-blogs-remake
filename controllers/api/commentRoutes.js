@@ -23,6 +23,10 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+// put route 
+
+// router.put = 
+
 // router.get("/", async (req, res) => {
 //   try {
 //     const cmnt = await Comment.findAll({});

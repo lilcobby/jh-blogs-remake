@@ -54,5 +54,21 @@ router.delete("/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+// put route works just need front end html and js
 
+// router.put("/:id", withAuth, async (req, res) => {
+//   try {
+//     const updateProj = await Project.update(
+//       { name: req.body.name, description: req.body.description },
+//       {
+//         where: {
+//           id: req.params.id,
+//         },
+//       }
+//     );
+//     res.status(200).json(updateProj);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 module.exports = router;
