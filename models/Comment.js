@@ -19,7 +19,7 @@ Comment.init(
       allowNull: false,
       references: {
         model: "user",
-        key: "name",
+        key: "id",
       },
     },
     project_id: {
