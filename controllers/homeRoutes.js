@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Project, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
-const test2 = require("../utils/helpers");
+
 router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 
 router.get("/project/:id", async (req, res) => {
   try {
-    const postData = await Project.findByPk(req.params.id, {
+    const projectData = await Project.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -46,17 +46,12 @@ router.get("/project/:id", async (req, res) => {
       ],
     });
 
-    const project = await postData.get({ plain: true });
-    const test = project.comments[0].user;
-    console.log(test);
+    const project = projectData.get({ plain: true });
+
     res.render("project", {
       ...project,
       logged_in: req.session.logged_in,
-
-      // comment_text: req.body.cmntVal,
-      // test: project.comments[1].comment_text,
     });
-    console.log(project);
   } catch (err) {
     res.status(500).json(err);
   }

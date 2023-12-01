@@ -6,7 +6,7 @@ router.get("/:id", async (req, res) => {
   try {
     const test = await Project.findByPk(req.params.id, {
       include: [
-        { model: User, attributes: ["name"] },
+        { model: User, attributes: ["id"] },
         // {
         //   model: Comment,
         //   include: [{ model: User, attributes: ["name"] }],
@@ -72,3 +72,6 @@ router.delete("/:id", withAuth, async (req, res) => {
 //   }
 // });
 module.exports = router;
+
+
+
